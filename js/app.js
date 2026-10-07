@@ -92,6 +92,7 @@
     }
 
     var sec = Sections[sectionKey];
+    if (head === 'franchise' && Sections.franchise) sec = Sections.franchise; /* detail renderer */
     markActive(sectionKey);
     document.title = (sectionKey === 'home' ? leagueName : (sec && sec.nav ? sec.nav + ' · ' : '') + leagueName);
 
