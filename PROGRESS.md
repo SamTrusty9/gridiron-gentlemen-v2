@@ -1,0 +1,9 @@
+- 2026-10-06 21:55 MDT — build started: data extracted from old site (12 manager photos, full dataset)
+- 2026-10-06 21:56 MDT — data split done: 16 per-section JSON files + 12 lineup files + 527-player search index (tools/split_data.py, repeatable)
+- 2026-10-06 21:57 MDT — logo/badge extracted; PWA icons ready (apple-touch-icon, 192/512)
+- 2026-10-06 21:58 MDT — build contract written; 3 parallel builders spawned (shell, sections A, sections B)
+- 2026-10-06 21:59 MDT — app shell built: index.html, styles.css (stadium-night theme), lib.js, app.js (hash router), manifest.json, sw.js; all helpers smoke-tested
+- 2026-10-06 22:00 MDT — sections A built: home, constitution, results/brackets, franchises + franchise detail (lineup explorer)
+- 2026-10-06 22:02 MDT — sections B built: records/HOF, drafts, rivalries, divisions, player search, bets, newsletter, fame — all 12 sections complete
+- 2026-10-06 22:02 MDT — starting verification pass
+- 2026-10-06 22:04 MDT — verification pass done: all 16 routes render clean vs real data, all JS syntax-checked, all data files serve 200 — build complete
