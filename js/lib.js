@@ -97,23 +97,23 @@
     [min, (min + max) / 2, max].forEach(function (v) {
       var y = Y(v).toFixed(1);
       out += '<line x1="' + padL + '" y1="' + y + '" x2="' + (w - padR) + '" y2="' + y +
-        '" stroke="#1e3a5c" stroke-width="1" opacity="0.6"/>';
-      out += '<text x="' + (w - padR) + '" y="' + (y - 3) + '" text-anchor="end" font-size="9" fill="#93a5b8">' +
+        '" stroke="#d8c9a4" stroke-width="1" opacity="0.9"/>';
+      out += '<text x="' + (w - padR) + '" y="' + (y - 3) + '" text-anchor="end" font-size="9" fill="#97836a">' +
         esc(fmt(v, 1)) + '</text>';
     });
     (series || []).forEach(function (s) {
       var pts = (s.points || []).map(function (p, i) { return X(i).toFixed(1) + ',' + Y(p).toFixed(1); }).join(' ');
-      out += '<polyline points="' + pts + '" fill="none" stroke="' + esc(s.color || '#2ea36b') +
+      out += '<polyline points="' + pts + '" fill="none" stroke="' + esc(s.color || '#d99a2b') +
         '" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>';
       var last = s.points[s.points.length - 1];
       if (last != null) {
         out += '<circle cx="' + X(s.points.length - 1).toFixed(1) + '" cy="' + Y(last).toFixed(1) +
-          '" r="3.5" fill="' + esc(s.color || '#2ea36b') + '"/>';
+          '" r="3.5" fill="' + esc(s.color || '#d99a2b') + '"/>';
       }
     });
     out += '</svg>';
     out += '<div class="chart-legend">' + (series || []).map(function (s) {
-      return '<span><i style="background:' + esc(s.color || '#2ea36b') + '"></i>' + esc(s.label) + '</span>';
+      return '<span><i style="background:' + esc(s.color || '#d99a2b') + '"></i>' + esc(s.label) + '</span>';
     }).join('') + '</div>';
     return out;
   }
@@ -155,6 +155,13 @@
     return '<img class="crest" src="assets/art/crest-' + esc(String(id)) + '.webp" alt="' + name + ' crest" loading="lazy">';
   }
 
+  /* Team mascot stickers (playful sticker-book art in assets/art/). */
+  function mascot(id, sizeClass) {
+    var cls = 'mascot' + (sizeClass ? ' ' + sizeClass : '');
+    var name = esc(mname(id));
+    return '<img class="' + cls + '" src="assets/art/mascot-' + esc(String(id)) + '.webp" alt="' + name + ' mascot" loading="lazy">';
+  }
+
   window.Lib = {
     esc: esc,
     mgr: mgr,
@@ -163,6 +170,7 @@
     photo: photo,
     avatar: avatar,
     crest: crest,
+    mascot: mascot,
     initials: initials,
     fmt: fmt,
     divName: divName,

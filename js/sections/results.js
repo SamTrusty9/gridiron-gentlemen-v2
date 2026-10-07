@@ -110,7 +110,8 @@
         if (b.fifth) place += bmatch({ id: b.fifth.home }, { id: b.fifth.away }, b.fifth.winner, '5th Place');
         var champId = (b.championship && b.championship.winner) || null;
         var banner = champId
-          ? '<div class="card center mt1"><span class="chip gold">🏆 ' + esc(season) + ' Champion</span>' +
+          ? '<div class="card center mt1"><img class="trophy-art" src="assets/art/trophy-championship.webp" alt="Championship trophy">' +
+            '<div class="mt1"><span class="chip gold">🏆 ' + esc(season) + ' Champion</span></div>' +
             '<div class="card-t">' + label(champId) + '</div></div>' : '';
 
         // ---- Championship summary ----

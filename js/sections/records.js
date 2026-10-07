@@ -26,8 +26,9 @@ window.Sections = window.Sections || {};
       Lib.esc(String(pos).charAt(0)) + '</span>';
   }
 
-  function extremesCard(Lib, D, title, games, statKey, prefix) {
-    var h = '<div class="card"><div class="card-t">' + Lib.esc(title) + '</div>';
+  function extremesCard(Lib, D, title, games, statKey, prefix, art) {
+    var h = '<div class="card"><div class="row"><div class="card-t">' + Lib.esc(title) + '</div>' +
+      (art ? '<img class="award-art" src="assets/art/' + art + '" alt="' + Lib.esc(title) + '">' : '') + '</div>';
     (games || []).forEach(function (g, i) {
       h += '<div class="row"><div><span class="muted">' + (i + 1) + '. ' +
         Lib.esc(g.season) + ' &middot; Wk ' + Lib.esc(g.week) + '</span><br>' +
@@ -123,9 +124,9 @@ window.Sections = window.Sections || {};
       /* --- League extremes --- */
       h += '<h2 class="mt2">League Extremes</h2><div class="grid mt1">';
       var lg = R.leagueGames || {};
-      h += extremesCard(Lib, D, 'Biggest Blowouts', lg.blowouts, 'margin', '+');
-      h += extremesCard(Lib, D, 'Closest Games', lg.closest, 'margin', '');
-      h += extremesCard(Lib, D, 'Highest-Scoring Games', lg.highestScoring, 'total', '');
+      h += extremesCard(Lib, D, 'Biggest Blowouts', lg.blowouts, 'margin', '+', 'award-blowout.webp');
+      h += extremesCard(Lib, D, 'Closest Games', lg.closest, 'margin', '', 'award-close-finish.webp');
+      h += extremesCard(Lib, D, 'Highest-Scoring Games', lg.highestScoring, 'total', '', 'award-high-score.webp');
       h += extremesCard(Lib, D, 'Lowest-Scoring Games', lg.lowestScoring, 'total', '');
       h += '</div>';
 

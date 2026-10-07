@@ -113,7 +113,7 @@
 
       return '' +
         '<div class="hero"><div class="hero-inner">' +
-          '<img class="hero-logo" src="assets/art/league-emblem.webp" alt="League crest">' +
+          '<img class="hero-art" src="assets/art/hero-tailgate.webp" alt="League tailgate celebration">' +
           '<div><div class="page-title">' + esc(league.name || 'The Gridiron Gentlemen\'s Society') + '</div>' +
           '<div class="page-sub">' + esc(league.motto || '') + '</div></div>' +
           '<div class="mt1"><span class="chip gold">Season ' + seasonNo + ' · Week ' + week + '</span> ' +
