@@ -149,6 +149,12 @@
     return '<a class="nav-link" href="#' + esc(route) + '">' + label + '</a>';
   }
 
+  /* Franchise crest artwork (vintage badges in assets/art/). */
+  function crest(id) {
+    var name = esc(mname(id));
+    return '<img class="crest" src="assets/art/crest-' + esc(String(id)) + '.webp" alt="' + name + ' crest" loading="lazy">';
+  }
+
   window.Lib = {
     esc: esc,
     mgr: mgr,
@@ -156,6 +162,7 @@
     teamName: teamName,
     photo: photo,
     avatar: avatar,
+    crest: crest,
     initials: initials,
     fmt: fmt,
     divName: divName,

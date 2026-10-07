@@ -38,7 +38,7 @@
       var cr = careerRec(S, m.id);
       var line = cr ? (S.esc(cr.record) + ' career' + (cr.titles ? ' · ' + cr.titles + '× champ' : '')) : '';
       return '<a class="card" href="#/franchise/' + m.id + '">' +
-        '<div class="row"><div>' + S.AV(m.id) + '</div>' + S.divChip(m.division) + '</div>' +
+        '<div class="row"><div>' + Lib.crest(m.id) + '</div>' + S.divChip(m.division) + '</div>' +
         '<div class="card-t">' + S.esc(m.name) + '</div>' +
         '<div class="card-sub">' + S.esc(m.team) + '</div>' +
         '<div class="muted">' + line + '</div></a>';

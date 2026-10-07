@@ -2,7 +2,7 @@
    Cache-first for the app shell (/, index.html, css/, js/, assets/).
    Network-first for data/*.json (with cache fallback).
    Relative URLs so the site works under a GitHub Pages subpath. */
-var CACHE = 'ggs-shell-v1';
+var CACHE = 'ggs-shell-v2';
 
 var SHELL = [
   './',
@@ -11,7 +11,7 @@ var SHELL = [
   'css/styles.css',
   'js/lib.js',
   'js/app.js',
-  'assets/logo-badge.png',
+  'assets/art/league-emblem.webp',
   'assets/apple-touch-icon.png',
   'assets/icon-192.png',
   'assets/icon-512.png'
